@@ -2,16 +2,22 @@ import { LoginFailedAction } from './actions/login-failed.action';
 import { LoginRequestedAction } from './actions/login-requested.action';
 import { LoginSucceedAction } from './actions/login-succeed.action';
 
+export enum LoginState {
+    PENDING = 'pending',
+    SUCCESS = 'success',
+    ERROR = 'error',
+}
+
 export interface LoginModel {
-    logged: boolean;
     error: {
         message: string;
     } | null;
+    state: LoginState | null;
 }
 
 const initialState: LoginModel = {
     error: null,
-    logged: false,
+    state: null,
 };
 
 type Actions = LoginFailedAction | LoginRequestedAction | LoginSucceedAction;

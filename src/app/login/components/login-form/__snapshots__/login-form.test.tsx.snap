@@ -1,0 +1,139 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Login form component Snapshots Renders empty state 1`] = `
+<div>
+  <form>
+    <div
+      class="container"
+    >
+      <label
+        class="label"
+        for="id-1"
+      >
+        E-mail
+      </label>
+      <input
+        class="field"
+        id="id-1"
+        name="email"
+        value=""
+      />
+    </div>
+    <div
+      class="container"
+    >
+      <label
+        class="label"
+        for="id-2"
+      >
+        Password
+      </label>
+      <input
+        class="field"
+        id="id-2"
+        name="password"
+        value=""
+      />
+    </div>
+    <button
+      class="button"
+    >
+      Let me in!
+    </button>
+  </form>
+</div>
+`;
+
+exports[`Login form component Snapshots Renders field error state 1`] = `
+<div>
+  <form>
+    <div
+      class="container"
+    >
+      <label
+        class="label"
+        for="id-1"
+      >
+        E-mail
+      </label>
+      <input
+        class="field"
+        id="id-1"
+        name="email"
+        value="lukasz@ostrowski.ninja"
+      />
+    </div>
+    <div
+      class="container"
+    >
+      <label
+        class="label"
+        for="id-2"
+      >
+        Password
+      </label>
+      <input
+        class="field"
+        id="id-2"
+        name="password"
+        value=""
+      />
+      <span
+        class="error"
+        data-testid="text-field:error-message"
+      >
+        Password is required
+      </span>
+    </div>
+    <button
+      class="button"
+    >
+      Let me in!
+    </button>
+  </form>
+</div>
+`;
+
+exports[`Login form component Snapshots Renders filled state 1`] = `
+<div>
+  <form>
+    <div
+      class="container"
+    >
+      <label
+        class="label"
+        for="id-1"
+      >
+        E-mail
+      </label>
+      <input
+        class="field"
+        id="id-1"
+        name="email"
+        value="lukasz@ostrowski.ninja"
+      />
+    </div>
+    <div
+      class="container"
+    >
+      <label
+        class="label"
+        for="id-2"
+      >
+        Password
+      </label>
+      <input
+        class="field"
+        id="id-2"
+        name="password"
+        value="Asd123!"
+      />
+    </div>
+    <button
+      class="button"
+    >
+      Let me in!
+    </button>
+  </form>
+</div>
+`;

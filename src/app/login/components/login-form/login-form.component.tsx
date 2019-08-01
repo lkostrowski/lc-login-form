@@ -48,4 +48,4 @@ export const LoginForm: React.FC<Props> = ({
 
 export const StatefulLoginForm = compose<Props, LoginFormOuterProps>(
     withLoginFormState,
-);
+)(LoginForm);

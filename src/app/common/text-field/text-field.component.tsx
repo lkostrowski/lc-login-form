@@ -31,7 +31,7 @@ export const TextField: React.FC<Props> = ({
                 id={id.current}
                 {...props}
             />
-            {error && <span className={styles.error}>{error}</span>}
+            {error && <span data-testid="text-field:error-message" className={styles.error}>{error}</span>}
         </div>
     );
 };

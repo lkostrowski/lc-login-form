@@ -8,7 +8,8 @@ import { withLoginFormState } from './with-login-form-state';
 import { Button } from '../../../common/button/button.component';
 
 export interface LoginFormOuterProps {
-    onFormSubmit(): unknown;
+    onFormSubmit(email: string, password: string): unknown;
+    globalError?: string;
 }
 
 interface Props
@@ -22,6 +23,7 @@ export const LoginForm: React.FC<Props> = ({
     handleChange,
     handleSubmit,
     handleBlur,
+    globalError,
 }) => {
     return (
         <form onSubmit={handleSubmit}>
@@ -41,7 +43,8 @@ export const LoginForm: React.FC<Props> = ({
                 value={values.password}
                 name="password"
             />
-            <Button>Let me in!</Button>
+            {globalError && <span>{globalError}</span>}
+            <Button type="submit">Let me in!</Button>
         </form>
     );
 };

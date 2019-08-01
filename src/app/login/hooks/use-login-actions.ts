@@ -16,4 +16,10 @@ export const useLoginActions = () => {
             }),
         );
     };
+
+    return {
+        logged,
+        error,
+        requestLogin,
+    };
 };

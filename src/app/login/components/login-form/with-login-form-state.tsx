@@ -9,7 +9,7 @@ export const withLoginFormState = withFormik<
     LoginFormValues
 >({
     handleSubmit(values, formikBag) {
-        formikBag.props.onFormSubmit();
+        formikBag.props.onFormSubmit(values.email, values.password);
     },
     mapPropsToValues(props) {
         return {
@@ -18,4 +18,6 @@ export const withLoginFormState = withFormik<
         };
     },
     validationSchema: loginFormValidationSchema,
+    validateOnBlur: true,
+    validateOnChange: false,
 });

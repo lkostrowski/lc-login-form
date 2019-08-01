@@ -29,5 +29,24 @@ export const loginReducer = (
     state = initialState,
     action: Actions,
 ): LoginModel => {
+    switch (action.type) {
+        case 'login:login-requested': {
+            return { ...state, state: LoginState.PENDING, error: null };
+        }
+        case 'login:login-failed': {
+            return {
+                ...state,
+                state: LoginState.ERROR,
+                error: action.payload.error,
+            };
+        }
+        case 'login:login-succeed': {
+            return {
+                ...state,
+                state: LoginState.SUCCESS,
+                error: null,
+            };
+        }
+    }
     return state;
 };

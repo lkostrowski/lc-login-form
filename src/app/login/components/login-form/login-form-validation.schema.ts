@@ -3,10 +3,11 @@ import { LoginFormValues } from './login-form-values';
 
 export const loginFormValidationSchema = object<LoginFormValues>({
     email: string()
-        .email()
-        .required(),
+        .required()
+        .email(),
     password: string()
-        .length(6)
+        .required()
+        .min(6)
         .test(
             'oneUpper',
             'Password must contain at least one uppercase letter',
@@ -27,6 +28,5 @@ export const loginFormValidationSchema = object<LoginFormValues>({
             (value: string) => {
                 return /[0-9]/.test(value);
             },
-        )
-        .required(),
+        ),
 });

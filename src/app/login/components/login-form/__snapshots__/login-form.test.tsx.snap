@@ -59,6 +59,25 @@ exports[`Login form component Snapshots Renders empty state 1`] = `
         </div>
       </div>
     </div>
+    <label
+      class="keepLogged container"
+    >
+      <input
+        hidden=""
+        name="keepLogged"
+        type="checkbox"
+      />
+      <img
+        alt=""
+        class="icon"
+        src="checkbox-unchecked.svg"
+      />
+      <span
+        class="label"
+      >
+        Keep me logged
+      </span>
+    </label>
     <button
       class="button fullWidth"
       type="submit"
@@ -139,6 +158,25 @@ exports[`Login form component Snapshots Renders field errorMessage state 1`] = `
         </div>
       </div>
     </div>
+    <label
+      class="keepLogged container"
+    >
+      <input
+        hidden=""
+        name="keepLogged"
+        type="checkbox"
+      />
+      <img
+        alt=""
+        class="icon"
+        src="checkbox-unchecked.svg"
+      />
+      <span
+        class="label"
+      >
+        Keep me logged
+      </span>
+    </label>
     <button
       class="button fullWidth"
       type="submit"
@@ -272,6 +310,25 @@ exports[`Login form component Snapshots Renders filled state 1`] = `
         </div>
       </div>
     </div>
+    <label
+      class="keepLogged container"
+    >
+      <input
+        hidden=""
+        name="keepLogged"
+        type="checkbox"
+      />
+      <img
+        alt=""
+        class="icon"
+        src="checkbox-unchecked.svg"
+      />
+      <span
+        class="label"
+      >
+        Keep me logged
+      </span>
+    </label>
     <button
       class="button fullWidth"
       type="submit"

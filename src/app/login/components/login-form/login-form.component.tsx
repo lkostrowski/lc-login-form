@@ -12,7 +12,8 @@ import { ErrorBar } from '../../../common/error-bar/error-bar.component';
 import { ReactComponent as ArrowIcon } from '../../../../images/arrow.svg';
 
 import styles from './login-form.module.scss';
-import {PasswordField} from "../password-field/password-field.component";
+import { PasswordField } from '../password-field/password-field.component';
+import { Checkbox } from '../../../common/checkbox/checkbox.component';
 
 export interface LoginFormOuterProps extends HTMLProps<HTMLFormElement> {
     onFormSubmit(email: string, password: string): unknown;
@@ -56,6 +57,13 @@ export const LoginForm: React.FC<Props> = ({
                 value={values.password}
                 name="password"
                 className={styles.field}
+            />
+            <Checkbox
+                onChange={handleChange}
+                name="keepLogged"
+                className={styles.keepLogged}
+                label="Keep me logged"
+                checked={values.keepLogged}
             />
             <Button fullWidth type="submit" rightIcon={<ArrowIcon />}>
                 Let me in!

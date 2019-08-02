@@ -7,14 +7,16 @@ import styles from './text-field.module.scss';
 interface Props extends HTMLProps<HTMLInputElement> {
     label?: string;
     inputClassName?: string;
-    error?: string;
+    errorMessage?: string;
+    hasError?: boolean;
 }
 
 export const TextField: React.FC<Props> = ({
     label,
     className,
     inputClassName,
-    error,
+    errorMessage,
+    hasError,
     ...props
 }) => {
     const id = useRef(nanoID(5));
@@ -22,16 +24,32 @@ export const TextField: React.FC<Props> = ({
     return (
         <div className={cx(styles.container, className)}>
             {label && (
-                <label className={styles.label} htmlFor={id.current}>
+                <label
+                    className={cx(styles.label, {
+                        [styles.withError]: hasError || errorMessage,
+                    })}
+                    htmlFor={id.current}
+                >
                     {label}
                 </label>
             )}
-            <input
-                className={cx(inputClassName, styles.field)}
-                id={id.current}
-                {...props}
-            />
-            {error && <span data-testid="text-field:error-message" className={styles.error}>{error}</span>}
+            <div className={styles.fieldContainer}>
+                <input
+                    className={cx(inputClassName, styles.field, {
+                        [styles.withError]: hasError || errorMessage,
+                    })}
+                    id={id.current}
+                    {...props}
+                />
+            </div>
+            {errorMessage && (
+                <span
+                    data-testid="text-field:error-message"
+                    className={styles.error}
+                >
+                    {errorMessage}
+                </span>
+            )}
         </div>
     );
 };

@@ -54,7 +54,7 @@ describe('Login form component', () => {
             expect(container).toMatchSnapshot();
         });
 
-        it('Renders field error state', () => {
+        it('Renders field errorMessage state', () => {
             const { container } = render(
                 <LoginForm
                     {...formikPropsMock as FormikProps<LoginFormValues>}
@@ -113,7 +113,7 @@ describe('Login form component', () => {
 
             await wait();
 
-            expect(getAllByTestId('text-field:error-message')).toHaveLength(2);
+            expect(getAllByTestId('text-field:errorMessage-message')).toHaveLength(2);
 
             expect(mockSubmit).not.toBeCalled();
         });

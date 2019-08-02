@@ -1,12 +1,44 @@
+@import '../../../theme/colors';
+@import '../../../theme/vars';
+
 .container {
 }
 
 .field {
+    background: $lighterGray;
+    height: 5rem;
+    border-radius: $borderRadius;
+    box-shadow: none;
+    outline: none;
+    display: block;
+    width: 100%;
+    padding: 0 1rem;
+    font-size: 1.4rem;
+    border: 1px solid $lighterGray;
+
+    &.withError {
+        border-color: $red;
+    }
+}
+
+.fieldContainer {
+    position: relative;
 }
 
 .label {
+    margin-bottom: 0.5rem;
+    display: block;
+    color: $lightGray;
+    font-size: 1.2rem;
+
+    &.withError {
+        color: $red;
+    }
 }
 
-.error{
-
+.error {
+    color: $red;
+    display: block;
+    margin-top: 0.5rem;
+    font-size: 1.2rem;
 }

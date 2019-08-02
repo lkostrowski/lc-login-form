@@ -35,20 +35,23 @@ export const LoginForm: React.FC<Props> = ({
                 </ErrorBar>
             )}
             <TextField
-                error={errors.email}
+                errorMessage={errors.email}
+                hasError={Boolean(errors.email)}
                 label="E-mail"
                 onChange={handleChange}
                 onBlur={handleBlur}
                 value={values.email}
                 name="email"
+                className={styles.field}
             />
             <TextField
-                error={errors.password}
+                hasError={Boolean(errors.password)}
                 label="Password"
                 onChange={handleChange}
                 onBlur={handleBlur}
                 value={values.password}
                 name="password"
+                className={styles.field}
             />
             <Button type="submit">Let me in!</Button>
         </form>

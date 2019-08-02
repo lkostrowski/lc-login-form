@@ -9,6 +9,7 @@ export const withLoginFormState = withFormik<
     LoginFormValues
 >({
     handleSubmit(values, formikBag) {
+        console.log(values)
         formikBag.props.onFormSubmit(values.email, values.password);
     },
     mapPropsToValues(props) {

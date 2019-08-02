@@ -14,31 +14,35 @@ export const usePasswordValidator = (value: string) => {
         undefined,
     );
 
+    /**
+     * I use validateSync instead of promise based, because React-Testing-Library
+     * and actually - React, doesnt handle async act() and testing async hooks is impossible or hard
+     */
     useEffect(() => {
-        oneDigit
-            .validate(value)
-            .then(() => {
-                setHasDigit(true);
-            })
-            .catch(() => setHasDigit(false));
-        oneLower
-            .validate(value)
-            .then(() => {
-                setHasLower(true);
-            })
-            .catch(() => setHasLower(false));
-        oneUpper
-            .validate(value)
-            .then(() => {
-                setHasUpper(true);
-            })
-            .catch(() => setHasUpper(false));
-        minLength
-            .validate(value)
-            .then(() => {
-                setHasMinLength(true);
-            })
-            .catch(() => setHasMinLength(false));
+        try {
+            oneDigit.validateSync(value);
+            setHasDigit(true);
+        } catch (e) {
+            setHasDigit(false);
+        }
+        try {
+            oneLower.validateSync(value);
+            setHasLower(true);
+        } catch (e) {
+            setHasLower(false);
+        }
+        try {
+            oneUpper.validateSync(value);
+            setHasUpper(true);
+        } catch (e) {
+            setHasUpper(false);
+        }
+        try {
+            minLength.validateSync(value);
+            setHasMinLength(true);
+        } catch (e) {
+            setHasMinLength(false);
+        }
     }, [value]);
 
     return { hasDigit, hasLower, hasUpper, hasMinLength };

@@ -44,7 +44,7 @@ export const PasswordField: React.FC<Props> = ({
                 {...props}
             />
             {(value as string).length > 0 && (
-                <div className={styles.conditions}>
+                <div className={styles.conditions} data-testid="password-field:validation-conditions">
                     <ConditionBar
                         className={styles.condition}
                         label="Min. 6 letters"

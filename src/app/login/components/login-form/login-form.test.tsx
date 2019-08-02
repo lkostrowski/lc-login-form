@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, fireEvent, wait, cleanup } from '@testing-library/react';
+import { render, fireEvent, wait, cleanup, act } from '@testing-library/react';
 import { FormikProps } from 'formik';
 import { LoginFormValues } from './login-form-values';
 import { LoginForm, StatefulLoginForm } from './login-form.component';
@@ -59,6 +59,9 @@ describe('Login form component', () => {
                 <LoginForm
                     {...formikPropsMock as FormikProps<LoginFormValues>}
                     onFormSubmit={() => {}}
+                    touched={{
+                        password: true,
+                    }}
                     values={{
                         password: '',
                         email: 'lukasz@ostrowski.ninja',
@@ -74,10 +77,10 @@ describe('Login form component', () => {
     });
 
     describe('Integration', () => {
-        it('Should let user fill and submit the form', async () => {
+        it('Should let user fill and submit the form', async (done) => {
             const mockSubmit = jest.fn();
 
-            const { getByLabelText, getByText } = render(
+            const { getByLabelText, container } = render(
                 <StatefulLoginForm onFormSubmit={mockSubmit} />,
             );
 
@@ -92,28 +95,26 @@ describe('Login form component', () => {
                     value: 'Asd123',
                 },
             });
-
-            await wait();
-
-            fireEvent.click(getByText('Let me in!'));
+            fireEvent.submit(container.querySelector('form')!);
 
             await wait();
 
             expect(mockSubmit).toBeCalled();
+            done();
         });
 
         it('Should ignore submit if user doesnt fill form and show errors', async () => {
             const mockSubmit = jest.fn();
 
-            const { getByText, getAllByTestId } = render(
+            const { container, getByTestId, debug } = render(
                 <StatefulLoginForm onFormSubmit={mockSubmit} />,
             );
 
-            fireEvent.click(getByText('Let me in!'));
+            fireEvent.submit(container.querySelector('form')!);
 
             await wait();
 
-            expect(getAllByTestId('text-field:errorMessage-message')).toHaveLength(2);
+            expect(getByTestId('text-field:error-message')).toBeDefined();
 
             expect(mockSubmit).not.toBeCalled();
         });
@@ -121,11 +122,11 @@ describe('Login form component', () => {
         it('Should submit if errors are corrected', async () => {
             const mockSubmit = jest.fn();
 
-            const { getByText, getByLabelText } = render(
+            const { getByLabelText, container } = render(
                 <StatefulLoginForm onFormSubmit={mockSubmit} />,
             );
 
-            fireEvent.click(getByText('Let me in!'));
+            fireEvent.submit(container.querySelector('form')!);
 
             await wait();
 
@@ -145,7 +146,7 @@ describe('Login form component', () => {
 
             await wait();
 
-            fireEvent.click(getByText('Let me in!'));
+            fireEvent.submit(container.querySelector('form')!);
 
             await wait();
 

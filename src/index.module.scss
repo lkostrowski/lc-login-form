@@ -1,7 +1,12 @@
-@import './theme/colors';
+@import './styles/colors';
+@import './styles/rwd';
 
 html {
     font-size: 62.5%;
+
+    @include media('<=phone') {
+        font-size: 55%;
+    }
 }
 
 body {

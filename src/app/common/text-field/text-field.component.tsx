@@ -26,7 +26,7 @@ export const TextField: React.FC<Props> = ({
             {label && (
                 <label
                     className={cx(styles.label, {
-                        [styles.withError]: hasError || errorMessage,
+                        [styles.withError]: hasError,
                     })}
                     htmlFor={id.current}
                 >
@@ -36,13 +36,13 @@ export const TextField: React.FC<Props> = ({
             <div className={styles.fieldContainer}>
                 <input
                     className={cx(inputClassName, styles.field, {
-                        [styles.withError]: hasError || errorMessage,
+                        [styles.withError]: hasError,
                     })}
                     id={id.current}
                     {...props}
                 />
             </div>
-            {errorMessage && (
+            {errorMessage && hasError && (
                 <span
                     data-testid="text-field:error-message"
                     className={styles.error}

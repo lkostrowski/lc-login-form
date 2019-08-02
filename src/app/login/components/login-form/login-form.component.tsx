@@ -28,6 +28,7 @@ export const LoginForm: React.FC<Props> = ({
     handleBlur,
     globalError,
     className,
+    touched,
 }) => {
     return (
         <form onSubmit={handleSubmit} className={cx(className)}>
@@ -38,7 +39,7 @@ export const LoginForm: React.FC<Props> = ({
             )}
             <TextField
                 errorMessage={errors.email}
-                hasError={Boolean(errors.email)}
+                hasError={Boolean(errors.email && touched.email)}
                 label="E-mail"
                 onChange={handleChange}
                 onBlur={handleBlur}
@@ -47,7 +48,7 @@ export const LoginForm: React.FC<Props> = ({
                 className={styles.field}
             />
             <TextField
-                hasError={Boolean(errors.password)}
+                hasError={Boolean(errors.password && touched.password)}
                 label="Password"
                 onChange={handleChange}
                 onBlur={handleBlur}

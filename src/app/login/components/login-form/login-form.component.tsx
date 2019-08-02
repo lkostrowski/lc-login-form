@@ -9,6 +9,8 @@ import { withLoginFormState } from './with-login-form-state';
 import { Button } from '../../../common/button/button.component';
 import { ErrorBar } from '../../../common/error-bar/error-bar.component';
 
+import { ReactComponent as ArrowIcon } from '../../../../images/arrow.svg';
+
 import styles from './login-form.module.scss';
 
 export interface LoginFormOuterProps extends HTMLProps<HTMLFormElement> {
@@ -53,7 +55,9 @@ export const LoginForm: React.FC<Props> = ({
                 name="password"
                 className={styles.field}
             />
-            <Button type="submit">Let me in!</Button>
+            <Button fullWidth type="submit" rightIcon={<ArrowIcon />}>
+                Let me in!
+            </Button>
         </form>
     );
 };

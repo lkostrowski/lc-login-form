@@ -1,1 +1,76 @@
-.button {}
+@import '../../../theme/colors';
+@import '../../../theme/vars';
+
+.button {
+    background: linear-gradient(
+        97.08deg,
+        $blue 12.12%,
+        rgba($violet, 0.49) 96.51%
+    );
+    height: 5rem;
+    font-size: 1.6rem;
+    color: $white;
+    font-weight: 500;
+    border: none;
+    outline: none;
+    border-radius: $borderRadius;
+    cursor: pointer;
+    text-align: left;
+    position: relative;
+    overflow: hidden;
+
+    &::after {
+        background: linear-gradient(
+            97.08deg,
+            $blue 5.12%,
+            rgba($violet, 0.49) 66.51%
+        );
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        content: '';
+        opacity: 0;
+        transition: 0.2s;
+    }
+
+    &:hover {
+        &::after {
+            opacity: 1;
+        }
+
+        & .rightIconContainer {
+            transform: translateY(-50%) translateX(0.5rem);
+        }
+    }
+}
+
+.content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    z-index: 1;
+    padding: 0 2rem;
+}
+
+.fullWidth {
+    display: block;
+    width: 100%;
+}
+
+.withRightIcon {
+    padding-right: 5rem;
+}
+
+.rightIconContainer {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: 0.2s;
+    right: 2rem;
+}

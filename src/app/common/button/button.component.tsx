@@ -1,10 +1,37 @@
-import React, { ButtonHTMLAttributes, HTMLAttributes, HTMLProps } from 'react';
+import React, { ButtonHTMLAttributes, ReactNode } from 'react';
 import cx from 'classnames';
 
 import styles from './button.module.scss';
 
-interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {}
+interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
+    fullWidth?: boolean;
+    rightIcon?: ReactNode;
+}
 
-export const Button: React.FC<Props> = ({ className, ...props }) => {
-    return <button className={cx(styles.button, className)} {...props} />;
+export const Button: React.FC<Props> = ({
+    className,
+    fullWidth,
+    children,
+    rightIcon,
+    ...props
+}) => {
+    return (
+        <button
+            className={cx(styles.button, className, {
+                [styles.fullWidth]: fullWidth,
+            })}
+            {...props}
+        >
+            <div
+                className={cx(styles.content, {
+                    [styles.withRightIcon]: Boolean(rightIcon),
+                })}
+            >
+                {children}
+                {rightIcon && (
+                    <div className={styles.rightIconContainer}>{rightIcon}</div>
+                )}
+            </div>
+        </button>
+    );
 };

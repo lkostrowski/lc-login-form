@@ -1,0 +1,20 @@
+@import '../../../theme/colors';
+@import '../../../theme/vars';
+
+.container {
+    background: $lightRed;
+    color: $white;
+    font-size: 1.4rem;
+    font-weight: 500;
+    padding: 1rem 5rem;
+    text-align: center;
+    position: relative;
+    border-radius: $borderRadius;
+}
+
+.icon {
+    position: absolute;
+    top: 50%;
+    left: 1rem;
+    transform: translateY(-50%);
+}

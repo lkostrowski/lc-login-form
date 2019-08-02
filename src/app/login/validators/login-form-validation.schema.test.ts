@@ -7,6 +7,7 @@ describe('Login form validation schema', () => {
                 .validateAt('password', {
                     password: '',
                     email: '',
+                    keepLogged: false,
                 })
                 .catch((err) => {
                     expect(err.type).toBe('required');
@@ -18,6 +19,7 @@ describe('Login form validation schema', () => {
                 .validateAt('password', {
                     password: 'foo',
                     email: '',
+                    keepLogged: false,
                 })
                 .catch((err) => {
                     expect(err.type).toBe('min');
@@ -29,6 +31,7 @@ describe('Login form validation schema', () => {
                 .validateAt('password', {
                     password: 'asddasdsa1',
                     email: '',
+                    keepLogged: false,
                 })
                 .catch((err) => {
                     expect(err.type).toBe('oneUpper');
@@ -40,6 +43,7 @@ describe('Login form validation schema', () => {
                 .validateAt('password', {
                     password: 'ASDASD1',
                     email: '',
+                    keepLogged: false,
                 })
                 .catch((err) => {
                     expect(err.type).toBe('oneLower');
@@ -51,6 +55,7 @@ describe('Login form validation schema', () => {
                 .validateAt('password', {
                     password: 'Asdasd',
                     email: '',
+                    keepLogged: false,
                 })
                 .catch((err) => {
                     expect(err.type).toBe('oneDigit');
@@ -62,6 +67,7 @@ describe('Login form validation schema', () => {
                 loginFormValidationSchema.validateAt('password', {
                     password: 'Asdasd1',
                     email: '',
+                    keepLogged: false,
                 }),
             )
                 .resolves.toBeDefined()
@@ -75,6 +81,7 @@ describe('Login form validation schema', () => {
                 .validateAt('email', {
                     password: '',
                     email: '',
+                    keepLogged: false,
                 })
                 .catch((err) => {
                     expect(err.type).toBe('required');
@@ -86,6 +93,7 @@ describe('Login form validation schema', () => {
                 .validateAt('email', {
                     password: '',
                     email: 'foobar',
+                    keepLogged: false,
                 })
                 .catch((err) => {
                     /**
@@ -101,6 +109,7 @@ describe('Login form validation schema', () => {
                 loginFormValidationSchema.validateAt('email', {
                     password: '',
                     email: 'lukasz@ostrowski.ninja',
+                    keepLogged: false,
                 }),
             )
                 .resolves.toBeDefined()

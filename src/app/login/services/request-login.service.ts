@@ -1,11 +1,18 @@
-import { ApiService } from '../../api/api-service';
+import { ApiService, CanFetch } from '../../api/api-service';
 
 const api = new ApiService();
 
-export class RequestLoginService {
+interface CanRequestLogin {
+    requestLogin(
+        email: string,
+        password: string,
+    ): Promise<{ uid: string; email: string }>;
+}
+
+export class RequestLoginService implements CanRequestLogin {
     private endpoint = '/api/login';
 
-    constructor(private apiService = api) {}
+    constructor(private apiService: CanFetch = api) {}
 
     requestLogin(email: string, password: string) {
         return this.apiService
@@ -26,4 +33,26 @@ export class RequestLoginService {
     }
 }
 
+export class MockRequestLoginService implements CanRequestLogin {
+    async requestLogin(
+        email: string,
+        password: string,
+    ): Promise<{ uid: string; email: string }> {
+        const emailWhitelisted = 'test@test.pl';
+        const passwordWhitelisted = 'Password1';
+
+        await new Promise((res) => setTimeout(res, 500));
+
+        if (email === emailWhitelisted && password === passwordWhitelisted) {
+            return {
+                uid: 'some-id',
+                email: 'test@test.pl',
+            };
+        }
+
+        throw new Error('Not authorized');
+    }
+}
+
 export const requestLoginService = new RequestLoginService();
+export const mockRequestLoginService = new MockRequestLoginService();

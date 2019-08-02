@@ -1,9 +1,12 @@
 import { call, put } from 'redux-saga/effects';
 
 import { LoginRequestedAction } from '../actions/login-requested.action';
-import { requestLoginService } from '../services/request-login.service';
+import { mockRequestLoginService } from '../services/request-login.service';
 import { createLoginSucceedAction } from '../actions/login-succeed.action';
 import { createLoginFailedAction } from '../actions/login-failed.action';
+
+// "dependency injection"
+const service = mockRequestLoginService;
 
 export function* requestLoginSaga(action: LoginRequestedAction) {
     const { password, email, keepLogged } = action.payload;
@@ -11,8 +14,8 @@ export function* requestLoginSaga(action: LoginRequestedAction) {
     try {
         const response = yield call(
             {
-                context: requestLoginService,
-                fn: requestLoginService.requestLogin,
+                context: service,
+                fn: service.requestLogin,
             },
             email,
             password,

@@ -14,10 +14,12 @@ import { ReactComponent as ArrowIcon } from '../../../../images/arrow.svg';
 import styles from './login-form.module.scss';
 import { PasswordField } from '../password-field/password-field.component';
 import { Checkbox } from '../../../common/checkbox/checkbox.component';
+import { LoadingSpinner } from '../../../common/loading-spinner/loading-spinner.component';
 
 export interface LoginFormOuterProps extends HTMLProps<HTMLFormElement> {
     onFormSubmit(dto: LoginFormDto): unknown;
     globalError?: string;
+    isLoading?: boolean;
 }
 
 interface Props extends FormikProps<LoginFormDto>, LoginFormOuterProps {}
@@ -31,6 +33,7 @@ export const LoginForm: React.FC<Props> = ({
     globalError,
     className,
     touched,
+    isLoading,
 }) => {
     return (
         <form onSubmit={handleSubmit} className={cx(className)}>
@@ -65,7 +68,12 @@ export const LoginForm: React.FC<Props> = ({
                 label="Keep me logged"
                 checked={values.keepLogged}
             />
-            <Button fullWidth type="submit" rightIcon={<ArrowIcon />}>
+            <Button
+                fullWidth
+                disabled={isLoading}
+                type="submit"
+                rightIcon={isLoading ? <LoadingSpinner /> : <ArrowIcon />}
+            >
                 Let me in!
             </Button>
         </form>

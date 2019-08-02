@@ -5,10 +5,10 @@ import { StatefulLoginForm } from '../components/login-form/login-form.component
 import { ReactComponent as Logo } from '../../../images/logo.svg';
 
 import styles from './login-screen.module.scss';
-import {LoginFormDto} from "../login-form.dto";
+import { LoginFormDto } from '../login-form.dto';
 
 export const LoginScreen = () => {
-    const { requestLogin, error, logged } = useLoginActions();
+    const { requestLogin, error, logged, loading } = useLoginActions();
 
     const onLoginRequested = (dto: LoginFormDto) => {
         requestLogin(dto);
@@ -19,6 +19,7 @@ export const LoginScreen = () => {
             <div className={styles.paper}>
                 <Logo className={styles.logo} />
                 <StatefulLoginForm
+                    isLoading={loading}
                     className={styles.form}
                     onFormSubmit={onLoginRequested}
                     globalError={(error && error.message) || undefined}

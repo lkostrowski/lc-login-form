@@ -19,6 +19,10 @@
     &.withError {
         border-color: $red;
     }
+
+    &.withRightIcon {
+        padding-right: 5rem;
+    }
 }
 
 .fieldContainer {
@@ -41,4 +45,11 @@
     display: block;
     margin-top: 0.5rem;
     font-size: 1.2rem;
+}
+
+.rightIconContainer {
+    position: absolute;
+    right: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
 }

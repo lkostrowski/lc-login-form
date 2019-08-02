@@ -12,6 +12,7 @@ import { ErrorBar } from '../../../common/error-bar/error-bar.component';
 import { ReactComponent as ArrowIcon } from '../../../../images/arrow.svg';
 
 import styles from './login-form.module.scss';
+import {PasswordField} from "../password-field/password-field.component";
 
 export interface LoginFormOuterProps extends HTMLProps<HTMLFormElement> {
     onFormSubmit(email: string, password: string): unknown;
@@ -47,7 +48,7 @@ export const LoginForm: React.FC<Props> = ({
                 name="email"
                 className={styles.field}
             />
-            <TextField
+            <PasswordField
                 hasError={Boolean(errors.password && touched.password)}
                 label="Password"
                 onChange={handleChange}

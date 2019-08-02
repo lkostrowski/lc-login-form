@@ -1,14 +1,15 @@
-import React, { HTMLProps, useRef } from 'react';
+import React, { HTMLProps, ReactNode, useRef } from 'react';
 import cx from 'classnames';
 import nanoID from 'nanoid';
 
 import styles from './text-field.module.scss';
 
-interface Props extends HTMLProps<HTMLInputElement> {
+export interface Props extends HTMLProps<HTMLInputElement> {
     label?: string;
     inputClassName?: string;
     errorMessage?: string;
     hasError?: boolean;
+    rightIcon?: ReactNode;
 }
 
 export const TextField: React.FC<Props> = ({
@@ -17,6 +18,7 @@ export const TextField: React.FC<Props> = ({
     inputClassName,
     errorMessage,
     hasError,
+    rightIcon,
     ...props
 }) => {
     const id = useRef(nanoID(5));
@@ -37,10 +39,14 @@ export const TextField: React.FC<Props> = ({
                 <input
                     className={cx(inputClassName, styles.field, {
                         [styles.withError]: hasError,
+                        [styles.withRightIcon]: Boolean(rightIcon),
                     })}
                     id={id.current}
                     {...props}
                 />
+                {rightIcon && (
+                    <div className={styles.rightIconContainer}>{rightIcon}</div>
+                )}
             </div>
             {errorMessage && hasError && (
                 <span

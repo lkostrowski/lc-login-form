@@ -1,7 +1,7 @@
 import React from 'react';
-import { render, fireEvent, wait, cleanup, act } from '@testing-library/react';
+import { cleanup, fireEvent, render, wait } from '@testing-library/react';
 import { FormikProps } from 'formik';
-import { LoginFormValues } from './login-form-values';
+import { LoginFormDto } from '../../login-form.dto';
 import { LoginForm, StatefulLoginForm } from './login-form.component';
 import nanoID from 'nanoid';
 
@@ -17,11 +17,12 @@ describe('Login form component', () => {
     });
 
     describe('Snapshots', () => {
-        const formikPropsMock: Partial<FormikProps<LoginFormValues>> = {
+        const formikPropsMock: Partial<FormikProps<LoginFormDto>> = {
             errors: {},
             values: {
                 email: '',
                 password: '',
+                keepLogged: false,
             },
             handleChange: () => {},
             handleBlur: () => {},
@@ -31,7 +32,7 @@ describe('Login form component', () => {
         it('Renders empty state', () => {
             const { container } = render(
                 <LoginForm
-                    {...formikPropsMock as FormikProps<LoginFormValues>}
+                    {...formikPropsMock as FormikProps<LoginFormDto>}
                     onFormSubmit={() => {}}
                 />,
             );
@@ -42,11 +43,12 @@ describe('Login form component', () => {
         it('Renders filled state', () => {
             const { container } = render(
                 <LoginForm
-                    {...formikPropsMock as FormikProps<LoginFormValues>}
+                    {...formikPropsMock as FormikProps<LoginFormDto>}
                     onFormSubmit={() => {}}
                     values={{
                         password: 'Asd123!',
                         email: 'lukasz@ostrowski.ninja',
+                        keepLogged: false,
                     }}
                 />,
             );
@@ -57,7 +59,7 @@ describe('Login form component', () => {
         it('Renders field errorMessage state', () => {
             const { container } = render(
                 <LoginForm
-                    {...formikPropsMock as FormikProps<LoginFormValues>}
+                    {...formikPropsMock as FormikProps<LoginFormDto>}
                     onFormSubmit={() => {}}
                     touched={{
                         password: true,
@@ -65,6 +67,7 @@ describe('Login form component', () => {
                     values={{
                         password: '',
                         email: 'lukasz@ostrowski.ninja',
+                        keepLogged: false,
                     }}
                     errors={{
                         password: 'Password is required',

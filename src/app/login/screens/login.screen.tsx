@@ -5,12 +5,13 @@ import { StatefulLoginForm } from '../components/login-form/login-form.component
 import { ReactComponent as Logo } from '../../../images/logo.svg';
 
 import styles from './login-screen.module.scss';
+import {LoginFormDto} from "../login-form.dto";
 
 export const LoginScreen = () => {
     const { requestLogin, error, logged } = useLoginActions();
 
-    const onLoginRequested = (email: string, password: string) => {
-        requestLogin(email, password);
+    const onLoginRequested = (dto: LoginFormDto) => {
+        requestLogin(dto);
     };
 
     return (

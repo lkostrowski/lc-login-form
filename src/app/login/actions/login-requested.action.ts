@@ -1,9 +1,7 @@
 import { AnyAction } from 'redux';
+import { LoginFormDto } from '../login-form.dto';
 
-interface Payload {
-    email: string;
-    password: string;
-}
+type Payload = LoginFormDto;
 
 export interface LoginRequestedAction extends AnyAction {
     type: 'login:login-requested';

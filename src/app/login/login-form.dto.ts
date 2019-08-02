@@ -1,4 +1,4 @@
-export interface LoginFormValues {
+export interface LoginFormDto {
     email: string;
     password: string;
     keepLogged: boolean;

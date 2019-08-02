@@ -2,7 +2,7 @@ import React, { HTMLProps } from 'react';
 import { FormikProps } from 'formik';
 import cx from 'classnames';
 
-import { LoginFormValues } from './login-form-values';
+import { LoginFormDto } from '../../login-form.dto';
 import { TextField } from '../../../common/text-field/text-field.component';
 import { compose } from 'recompose';
 import { withLoginFormState } from './with-login-form-state';
@@ -16,11 +16,11 @@ import { PasswordField } from '../password-field/password-field.component';
 import { Checkbox } from '../../../common/checkbox/checkbox.component';
 
 export interface LoginFormOuterProps extends HTMLProps<HTMLFormElement> {
-    onFormSubmit(email: string, password: string): unknown;
+    onFormSubmit(dto: LoginFormDto): unknown;
     globalError?: string;
 }
 
-interface Props extends FormikProps<LoginFormValues>, LoginFormOuterProps {}
+interface Props extends FormikProps<LoginFormDto>, LoginFormOuterProps {}
 
 export const LoginForm: React.FC<Props> = ({
     values,

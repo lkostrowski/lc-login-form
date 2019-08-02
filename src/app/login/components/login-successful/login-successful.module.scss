@@ -1,0 +1,19 @@
+@import "../../../../styles/colors";
+
+.container {
+    padding: 4rem 2rem;
+    font-size: 3rem;
+}
+
+.text {
+    text-transform: uppercase;
+    margin-right: 1rem;
+    font-weight: 500;
+    background: linear-gradient(
+        97.08deg,
+        $blue 12.12%,
+        rgba($violet, 0.49) 96.51%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}

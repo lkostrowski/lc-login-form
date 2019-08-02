@@ -1,0 +1,38 @@
+@import '../../../theme/colors';
+@import '../../../theme/vars';
+
+.container {
+}
+
+.bar {
+    height: 3px;
+    border-radius: $borderRadius;
+    background: $lightGray;
+    margin-bottom: 0.5rem;
+
+    &.invalid {
+        background: $red;
+    }
+
+    &.valid {
+        background: $green;
+    }
+}
+
+.label {
+    color: $lightGray;
+    display: block;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 1rem;
+    white-space: nowrap;
+    text-align: center;
+
+    &.invalid {
+        color: $red;
+    }
+
+    &.valid {
+        color: $green;
+    }
+}

@@ -1,0 +1,27 @@
+@import "../../../theme/colors";
+
+.container {
+    height: 100vh;
+    width: 100vw;
+    background-image: url('../../../images/bg.png');
+    background-size: cover;
+}
+
+.paper {
+    width: 56rem;
+    background: $white;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form {
+    width: 32rem;
+}
+
+.logo {
+    display: block;
+    margin-bottom: 5rem;
+}

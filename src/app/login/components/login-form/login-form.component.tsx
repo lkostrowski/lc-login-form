@@ -1,5 +1,6 @@
 import React, { HTMLProps } from 'react';
 import { FormikProps } from 'formik';
+import cx from 'classnames'
 
 import { LoginFormValues } from './login-form-values';
 import { TextField } from '../../../common/text-field/text-field.component';
@@ -7,15 +8,12 @@ import { compose } from 'recompose';
 import { withLoginFormState } from './with-login-form-state';
 import { Button } from '../../../common/button/button.component';
 
-export interface LoginFormOuterProps {
+export interface LoginFormOuterProps extends HTMLProps<HTMLFormElement> {
     onFormSubmit(email: string, password: string): unknown;
     globalError?: string;
 }
 
-interface Props
-    extends FormikProps<LoginFormValues>,
-        LoginFormOuterProps,
-        HTMLProps<HTMLFormElement> {}
+interface Props extends FormikProps<LoginFormValues>, LoginFormOuterProps {}
 
 export const LoginForm: React.FC<Props> = ({
     values,
@@ -24,9 +22,10 @@ export const LoginForm: React.FC<Props> = ({
     handleSubmit,
     handleBlur,
     globalError,
+    className
 }) => {
     return (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className={cx(className)}>
             <TextField
                 error={errors.email}
                 label="E-mail"

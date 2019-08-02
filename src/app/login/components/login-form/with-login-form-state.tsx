@@ -19,5 +19,5 @@ export const withLoginFormState = withFormik<
     },
     validationSchema: loginFormValidationSchema,
     validateOnBlur: true,
-    validateOnChange: false,
+    validateOnChange: true,
 });

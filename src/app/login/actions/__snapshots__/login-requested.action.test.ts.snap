@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Login Requested Action Should match snapshot 1`] = `
+Object {
+  "payload": Object {
+    "email": "some-email@test.com",
+    "keepLogged": false,
+    "password": "Password1",
+  },
+  "type": "login:login-requested",
+}
+`;

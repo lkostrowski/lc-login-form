@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Login Succeed Action Should match snapshot 1`] = `
+Object {
+  "payload": Object {
+    "email": "some-email@test.com",
+    "uid": "user-id",
+  },
+  "type": "login:login-succeed",
+}
+`;

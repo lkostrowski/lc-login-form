@@ -46,6 +46,7 @@
     },
     "devDependencies": {
         "@testing-library/react": "^8.0.7",
+        "@testing-library/react-hooks": "^1.1.0",
         "@types/classnames": "^2.2.9",
         "@types/nanoid": "^2.0.0",
         "@types/react": "^16.8.23",
@@ -55,7 +56,8 @@
         "@types/redux": "^3.6.0",
         "@types/redux-saga": "^0.10.5",
         "@types/yup": "^0.26.22",
-        "cz-conventional-changelog": "^3.0.2"
+        "cz-conventional-changelog": "^3.0.2",
+        "react-test-renderer": "^16.8.6"
     },
     "config": {
         "commitizen": {

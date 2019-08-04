@@ -3,7 +3,7 @@ import { getIsUserLogged } from '../selectors/get-is-user-logged.selector';
 import { getLoginError } from '../selectors/get-login-error.selector';
 import { createLoginRequestedAction } from '../actions/login-requested.action';
 import { LoginFormDto } from '../login-form.dto';
-import {getIsLoginPending} from "../selectors/get-is-login-pending.selector";
+import { getIsLoginPending } from '../selectors/get-is-login-pending.selector';
 
 export const useLoginActions = () => {
     const dispatch = useDispatch();
@@ -19,6 +19,6 @@ export const useLoginActions = () => {
         logged,
         error,
         loading,
-        requestLogin
+        requestLogin,
     };
 };

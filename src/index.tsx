@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 /**
- * Polyfill for IE10
+ * Polyfill for IE
  * Normally should be feature-detected for performance reasons
  */
 import 'whatwg-fetch';

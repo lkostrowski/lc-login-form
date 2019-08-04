@@ -1,7 +1,7 @@
 import React, { HTMLProps } from 'react';
 import cx from 'classnames';
 
-import { ReactComponent as ErrorIcon } from '../../../images/error.svg';
+import { ReactComponent as ErrorIcon } from '../../../icons/error.svg';
 
 import styles from './error-bar.module.scss';
 

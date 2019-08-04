@@ -1,6 +1,7 @@
 import { applyMiddleware, combineReducers, createStore } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import createSagaMiddleware from 'redux-saga';
+
 import { LoginModel, loginReducer } from '../login/login.model';
 import { loginSaga } from '../login/sagas/login.saga';
 

@@ -9,7 +9,7 @@ import { withLoginFormState } from './with-login-form-state';
 import { Button } from '../../../common/button/button.component';
 import { ErrorBar } from '../../../common/error-bar/error-bar.component';
 
-import { ReactComponent as ArrowIcon } from '../../../../images/arrow.svg';
+import { ReactComponent as ArrowIcon } from '../../../../icons/arrow.svg';
 
 import styles from './login-form.module.scss';
 import { PasswordField } from '../password-field/password-field.component';

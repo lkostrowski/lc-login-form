@@ -1,8 +1,8 @@
 import React, { HTMLProps } from 'react';
 import cx from 'classnames';
 
-import checkboxNotFilledUrl from '../../../images/checkbox-unchecked.svg';
-import checkboxFilledUrl from '../../../images/checkbox.svg';
+import checkboxNotFilledUrl from '../../../icons/checkbox-unchecked.svg';
+import checkboxFilledUrl from '../../../icons/checkbox.svg';
 
 import styles from './checkbox.module.scss';
 

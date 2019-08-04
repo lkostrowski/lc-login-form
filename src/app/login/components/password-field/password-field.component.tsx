@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import cx from 'classnames';
 
-import { ReactComponent as EyeIcon } from '../../../../images/eye.svg';
+import { ReactComponent as EyeIcon } from '../../../../icons/eye.svg';
 
 import styles from './password-field.module.scss';
 

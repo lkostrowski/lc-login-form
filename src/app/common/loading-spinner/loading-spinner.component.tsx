@@ -3,7 +3,7 @@ import cx from 'classnames';
 
 import styles from './loading-spinner.module.scss';
 
-import { ReactComponent as SpinnerIcon } from '../../../images/loading.svg';
+import { ReactComponent as SpinnerIcon } from '../../../icons/loading.svg';
 
 export const LoadingSpinner = ({
     className,

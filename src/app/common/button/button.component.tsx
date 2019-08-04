@@ -8,6 +8,10 @@ interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
     rightIcon?: ReactNode;
 }
 
+/**
+ * In "real" project button will probably contain few variants and a lot of different props, like size etc.
+ * Here lets stick to one with minimal config.
+ */
 export const Button: React.FC<Props> = ({
     className,
     fullWidth,

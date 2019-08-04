@@ -9,6 +9,9 @@ import { LoginFormDto } from '../login-form.dto';
 
 import styles from './login-screen.module.scss';
 
+/**
+ * In "real" app this will have some route props injected.
+ */
 export const LoginScreen = () => {
     const { requestLogin, error, logged, loading } = useLoginActions();
 

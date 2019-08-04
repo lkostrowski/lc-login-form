@@ -16,6 +16,10 @@ interface Props extends TextFieldProps {}
 const mapValidationToConditionState = (valid: boolean | undefined) =>
     valid === true ? 'valid' : valid === false ? 'invalid' : undefined;
 
+/**
+ * In the scope of this app, I've put this in login module scope. In bigger app it would probably stay nearby
+ * UI/Forms module.
+ */
 export const PasswordField: React.FC<Props> = ({
     className,
     type,
@@ -43,25 +47,28 @@ export const PasswordField: React.FC<Props> = ({
                 {...props}
             />
             {(value as string).length > 0 && (
-                <div className={styles.conditions} data-testid='password-field:validation-conditions'>
+                <div
+                    className={styles.conditions}
+                    data-testid="password-field:validation-conditions"
+                >
                     <ConditionBar
                         className={styles.condition}
-                        label='Min. 6 letters'
+                        label="Min. 6 letters"
                         state={mapValidationToConditionState(hasMinLength)}
                     />
                     <ConditionBar
                         className={styles.condition}
-                        label='Upper letter'
+                        label="Upper letter"
                         state={mapValidationToConditionState(hasUpper)}
                     />
                     <ConditionBar
                         className={styles.condition}
-                        label='Lower letter'
+                        label="Lower letter"
                         state={mapValidationToConditionState(hasLower)}
                     />
                     <ConditionBar
                         className={styles.condition}
-                        label='A digit'
+                        label="A digit"
                         state={mapValidationToConditionState(hasDigit)}
                     />
                 </div>

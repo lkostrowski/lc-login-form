@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Loading spinner component Snapshots Default 1`] = `
+<div>
+  <svg
+    class="loader"
+  >
+    loading.svg
+  </svg>
+</div>
+`;

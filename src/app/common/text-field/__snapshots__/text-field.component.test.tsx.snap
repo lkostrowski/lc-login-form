@@ -1,0 +1,81 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Text field component Snapshots Empty 1`] = `
+<div>
+  <div
+    class="container"
+  >
+    <div
+      class="fieldContainer"
+    >
+      <input
+        class="field"
+        id="id"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Text field component Snapshots Filled 1`] = `
+<div>
+  <div
+    class="container"
+  >
+    <div
+      class="fieldContainer"
+    >
+      <input
+        class="field"
+        id="id"
+        value="Filled"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Text field component Snapshots With error 1`] = `
+<div>
+  <div
+    class="container"
+  >
+    <div
+      class="fieldContainer"
+    >
+      <input
+        class="field withError"
+        id="id"
+      />
+    </div>
+    <span
+      class="error"
+      data-testid="text-field:error-message"
+    >
+      Some error
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Text field component Snapshots With right icon 1`] = `
+<div>
+  <div
+    class="container"
+  >
+    <div
+      class="fieldContainer"
+    >
+      <input
+        class="field withRightIcon"
+        id="id"
+      />
+      <div
+        class="rightIconContainer"
+      >
+        <svg />
+      </div>
+    </div>
+  </div>
+</div>
+`;

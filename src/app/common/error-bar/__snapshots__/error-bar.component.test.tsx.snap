@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Error Bar component Snapshots Default 1`] = `
+<div>
+  <div
+    class="container"
+  >
+    <svg
+      class="icon"
+    >
+      error.svg
+    </svg>
+    Error content
+  </div>
+</div>
+`;

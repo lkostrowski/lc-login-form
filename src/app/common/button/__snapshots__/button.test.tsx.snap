@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button component Snapshots Basic version 1`] = `
+<div>
+  <button
+    class="button"
+  >
+    <div
+      class="content"
+    >
+      Click me
+    </div>
+  </button>
+</div>
+`;
+
+exports[`Button component Snapshots Full width version 1`] = `
+<div>
+  <button
+    class="button fullWidth"
+  >
+    <div
+      class="content"
+    >
+      Click me
+    </div>
+  </button>
+</div>
+`;
+
+exports[`Button component Snapshots With icon 1`] = `
+<div>
+  <button
+    class="button"
+  >
+    <div
+      class="content withRightIcon"
+    >
+      Click me
+      <div
+        class="rightIconContainer"
+      >
+        <svg />
+      </div>
+    </div>
+  </button>
+</div>
+`;

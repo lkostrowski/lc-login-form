@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Condition Bar component Snapshots Invalid 1`] = `
+<div>
+  <div
+    class="container"
+  >
+    <div
+      class="bar invalid"
+    />
+    <span
+      class="label invalid"
+    >
+      Some condition
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Condition Bar component Snapshots Valid 1`] = `
+<div>
+  <div
+    class="container"
+  >
+    <div
+      class="bar valid"
+    />
+    <span
+      class="label valid"
+    >
+      Some condition
+    </span>
+  </div>
+</div>
+`;

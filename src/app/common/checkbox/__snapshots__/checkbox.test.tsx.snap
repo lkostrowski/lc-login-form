@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Checkbox component Snapshots Basic version 1`] = `
+<div>
+  <label
+    class="container"
+  >
+    <input
+      hidden=""
+      type="checkbox"
+    />
+    <img
+      alt=""
+      class="icon"
+      src="checkbox-unchecked.svg"
+    />
+    <span
+      class="label"
+    >
+      Checkbox
+    </span>
+  </label>
+</div>
+`;
+
+exports[`Checkbox component Snapshots Checked version 1`] = `
+<div>
+  <label
+    class="container"
+  >
+    <input
+      checked=""
+      hidden=""
+      type="checkbox"
+    />
+    <img
+      alt=""
+      class="icon"
+      src="checkbox.svg"
+    />
+    <span
+      class="label"
+    >
+      Checkbox
+    </span>
+  </label>
+</div>
+`;

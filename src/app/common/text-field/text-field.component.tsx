@@ -1,6 +1,6 @@
-import React, { HTMLProps, ReactNode, useRef } from 'react';
 import cx from 'classnames';
 import nanoID from 'nanoid';
+import React, { HTMLProps, ReactNode, useRef } from 'react';
 
 import styles from './text-field.module.scss';
 
@@ -50,7 +50,7 @@ export const TextField: React.FC<Props> = ({
             </div>
             {errorMessage && hasError && (
                 <span
-                    data-testid="text-field:error-message"
+                    data-testid='text-field:error-message'
                     className={styles.error}
                 >
                     {errorMessage}

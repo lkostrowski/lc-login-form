@@ -1,5 +1,5 @@
-import React, { HTMLProps } from 'react';
 import cx from 'classnames';
+import React, { HTMLProps } from 'react';
 
 import checkboxNotFilledUrl from '../../../icons/checkbox-unchecked.svg';
 import checkboxFilledUrl from '../../../icons/checkbox.svg';
@@ -18,13 +18,13 @@ export const Checkbox: React.FC<Props> = ({
 }) => {
     return (
         <label className={cx(className, styles.container)}>
-            <input checked={checked} hidden type="checkbox" {...props} />
+            <input checked={checked} hidden type='checkbox' {...props} />
             {checked ? (
-                <img className={styles.icon} alt="" src={checkboxFilledUrl} />
+                <img className={styles.icon} alt='' src={checkboxFilledUrl} />
             ) : (
                 <img
                     className={styles.icon}
-                    alt=""
+                    alt=''
                     src={checkboxNotFilledUrl}
                 />
             )}

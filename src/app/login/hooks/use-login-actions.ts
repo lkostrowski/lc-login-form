@@ -1,9 +1,10 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { getIsUserLogged } from '../selectors/get-is-user-logged.selector';
-import { getLoginError } from '../selectors/get-login-error.selector';
+
 import { createLoginRequestedAction } from '../actions/login-requested.action';
 import { LoginFormDto } from '../login-form.dto';
 import { getIsLoginPending } from '../selectors/get-is-login-pending.selector';
+import { getIsUserLogged } from '../selectors/get-is-user-logged.selector';
+import { getLoginError } from '../selectors/get-login-error.selector';
 
 export const useLoginActions = () => {
     const dispatch = useDispatch();

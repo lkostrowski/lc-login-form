@@ -1,4 +1,5 @@
 import { renderHook } from '@testing-library/react-hooks';
+
 import { usePasswordValidator } from './use-password-validator';
 
 describe('Use password validation hook', function() {

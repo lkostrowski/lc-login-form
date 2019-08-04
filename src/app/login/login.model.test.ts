@@ -1,7 +1,7 @@
-import { LoginModel, loginReducer, LoginState } from './login.model';
+import { createLoginFailedAction } from './actions/login-failed.action';
 import { createLoginRequestedAction } from './actions/login-requested.action';
 import { createLoginSucceedAction } from './actions/login-succeed.action';
-import { createLoginFailedAction } from './actions/login-failed.action';
+import { LoginModel, loginReducer, LoginState } from './login.model';
 
 describe('Login Model reducer', function() {
     let state: LoginModel;

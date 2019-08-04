@@ -1,5 +1,6 @@
-import React from 'react';
 import { cleanup, render } from '@testing-library/react';
+import React from 'react';
+
 import { LoadingSpinner } from './loading-spinner.component';
 
 afterEach(cleanup);

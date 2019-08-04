@@ -1,10 +1,11 @@
+import { useEffect, useState } from 'react';
+
 import {
+    minLength,
     oneDigit,
     oneLower,
     oneUpper,
-    minLength,
 } from '../validators/password-validation';
-import { useEffect, useState } from 'react';
 
 export const usePasswordValidator = (value: string) => {
     const [hasDigit, setHasDigit] = useState<boolean | undefined>(undefined);

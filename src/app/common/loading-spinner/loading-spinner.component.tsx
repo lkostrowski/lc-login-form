@@ -1,9 +1,9 @@
-import React, { SVGAttributes } from 'react';
 import cx from 'classnames';
-
-import styles from './loading-spinner.module.scss';
+import React, { SVGAttributes } from 'react';
 
 import { ReactComponent as SpinnerIcon } from '../../../icons/loading.svg';
+
+import styles from './loading-spinner.module.scss';
 
 export const LoadingSpinner = ({
     className,

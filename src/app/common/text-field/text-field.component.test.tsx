@@ -1,7 +1,8 @@
-import React from 'react';
 import { cleanup, render } from '@testing-library/react';
-import { TextField } from './text-field.component';
 import nanoID from 'nanoid';
+import React from 'react';
+
+import { TextField } from './text-field.component';
 
 afterEach(cleanup);
 
@@ -17,7 +18,7 @@ describe('Text field component', () => {
         });
         test('Filled', () => {
             const { container } = render(
-                <TextField value="Filled" onChange={() => {}} />,
+                <TextField value='Filled' onChange={() => {}} />,
             );
 
             expect(container).toMatchSnapshot();
@@ -29,7 +30,7 @@ describe('Text field component', () => {
         });
         test('With error', () => {
             const { container } = render(
-                <TextField errorMessage="Some error" hasError />,
+                <TextField errorMessage='Some error' hasError />,
             );
 
             expect(container).toMatchSnapshot();

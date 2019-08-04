@@ -1,5 +1,6 @@
-import { RequestLoginService } from './request-login.service';
 import { CanFetch } from '../../api/api-service';
+
+import { RequestLoginService } from './request-login.service';
 
 describe('Request Login service', function() {
     it('Should call request method', () => {

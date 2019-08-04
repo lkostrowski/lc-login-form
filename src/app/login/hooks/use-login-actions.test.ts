@@ -1,9 +1,11 @@
-import { useDispatch, useSelector } from 'react-redux';
-import { useLoginActions } from './use-login-actions';
 import { renderHook } from '@testing-library/react-hooks';
+import { useDispatch, useSelector } from 'react-redux';
+
+import { getIsLoginPending } from '../selectors/get-is-login-pending.selector';
 import { getIsUserLogged } from '../selectors/get-is-user-logged.selector';
 import { getLoginError } from '../selectors/get-login-error.selector';
-import { getIsLoginPending } from '../selectors/get-is-login-pending.selector';
+
+import { useLoginActions } from './use-login-actions';
 
 jest.mock('react-redux');
 jest.mock('../selectors/get-is-user-logged.selector');
@@ -11,7 +13,7 @@ jest.mock('../selectors/get-login-error.selector');
 jest.mock('../selectors/get-is-login-pending.selector');
 
 describe('Use login actions Hook', () => {
-    let mockDispatch = jest.fn();
+    const mockDispatch = jest.fn();
 
     beforeEach(() => {
         (useDispatch as jest.Mock).mockImplementation(() => mockDispatch);
@@ -33,10 +35,10 @@ describe('Use login actions Hook', () => {
         result.current.requestLogin({
             email: 'some@email.com',
             keepLogged: true,
-            password: 'asdASD1'
+            password: 'asdASD1',
         });
 
-        expect(mockDispatch).toHaveBeenCalled()
+        expect(mockDispatch).toHaveBeenCalled();
     });
 
     it('Should return login state from store to component', () => {
@@ -45,5 +47,5 @@ describe('Use login actions Hook', () => {
         expect(result.current.logged).toBe(true);
         expect(result.current.error).toEqual(null);
         expect(result.current.loading).toBe(false);
-    })
+    });
 });

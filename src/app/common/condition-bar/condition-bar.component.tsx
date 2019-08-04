@@ -1,5 +1,5 @@
-import React, { HTMLProps } from 'react';
 import cx from 'classnames';
+import React, { HTMLProps } from 'react';
 
 import styles from './condition-bar.module.scss';
 

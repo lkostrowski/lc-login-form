@@ -1,7 +1,9 @@
+import { fireEvent, render, wait } from '@testing-library/react';
 import React from 'react';
-import { render, fireEvent, wait } from '@testing-library/react';
-import { LoginScreen } from './login.screen';
+
 import { useLoginActions } from '../hooks/use-login-actions';
+
+import { LoginScreen } from './login.screen';
 
 jest.mock('../hooks/use-login-actions');
 

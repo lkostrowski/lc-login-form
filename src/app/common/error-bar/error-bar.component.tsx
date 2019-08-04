@@ -1,5 +1,5 @@
-import React, { HTMLProps } from 'react';
 import cx from 'classnames';
+import React, { HTMLProps } from 'react';
 
 import { ReactComponent as ErrorIcon } from '../../../icons/error.svg';
 

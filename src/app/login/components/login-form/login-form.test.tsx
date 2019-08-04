@@ -1,9 +1,11 @@
-import React from 'react';
 import { cleanup, fireEvent, render, wait } from '@testing-library/react';
 import { FormikProps } from 'formik';
-import { LoginFormDto } from '../../login-form.dto';
-import { LoginForm, StatefulLoginForm } from './login-form.component';
 import nanoID from 'nanoid';
+import React from 'react';
+
+import { LoginFormDto } from '../../login-form.dto';
+
+import { LoginForm, StatefulLoginForm } from './login-form.component';
 
 afterEach(cleanup);
 
